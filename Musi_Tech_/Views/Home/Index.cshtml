@@ -1,31 +1,140 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<!DOCTYPE html>
+<style>
+    body {
+        background-color: #cccccc;
+        background-image: url('../../Content/Image/abstractmusicnapa.jpg');
+        background-size: 200%;
+        background-repeat: no-repeat;
+    }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+    body {
+        padding-top: 300px;
+        padding-bottom: 0px;
+        padding-left: 50px;
+    }
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0
+    }
+
+    .container-fluid {
+        height: 100%;
+        display: table;
+        width: 100%;
+        padding: 0;
+    }
+
+    .row-fluid {
+        height: 100%;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .centering {
+        float: none;
+        margin: 0 auto;
+    }
+
+    .button {
+        border: 0;
+        background: transparent;
+        box-sizing: border-box;
+        width: 0;
+        height: 65px;
+        border-color: transparent transparent transparent #202020;
+        transition: 100ms all ease;
+        cursor: pointer;
+        border-style: solid;
+        border-width: 35px 0 35px 59px;
+    }
+
+    .paused {
+        border-style: double;
+        border-width: 0px 0 0px 59px;
+    }
+
+    .hover {
+        border-color: transparent transparent transparent #404040;
+    }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+    <div class="container">
+        <div class="outer">
+            <div class="details">
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+</body>
+<body1>
+    <div class="jumbotron">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="centering text-center">
+                    <h1>MusiTech</h1>
+                    @Html.ActionLink(" ", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "fa fa-play", style = "font-size:48px;color:maroon" })
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+</body1>
+
+<body2>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Instruments</h2>
+            <style>
+                .jumbotron {
+                    padding-bottom: 300px;
+                }
+            </style>
+            <p>
+                We recommend renting or buying your instrument prior to the first music lesson. Click on the button below to begin shopping for your instrument of choice!
+            </p>
+            @Html.ActionLink(" ", " ", "https://www.theinstrumentplace.com/?utm_medium=referral&utm_campaign=paid&utm_source=google&utm_content=instrument_rental&gclid=Cj0KCQiAnY_jBRDdARIsAIEqpJ0n5W4pisxxc4Z5XrhYox9rt1Aqz5FfoTvmPwuWXCHatKgf8lJk0NwaAvVTEALw_wcB", routeValues: null, htmlAttributes: new { @class = "fa fa-play", style = "font-size:48px;color:rgb(169,169,169)" })
+        </div>
+        <div class="col-md-4">
+            <h2>Request Lesson</h2>
+            <p>
+                The link below will take you to our request lessons page. Click on the button below to schdule your first music lesson!
+            </p>
+            @Html.ActionLink(" ", "Create", "LessonRequest", routeValues: null, htmlAttributes: new { @class = "fa fa-play", style = "font-size:48px;color:rgb(169,169,169)" })
+        </div>
+        <div class="col-md-4">
+            <h2>Tuning Tool</h2>
+            <p>Here at MusiTech we understand that making sure your instrument is in tune is just as important as having a drummer in a rock band! Without it, it just wouldn't sound right. Click on the link below to use the online tuning tool.</p>
+            @Html.ActionLink(" ", " ", "https://www.alexdemartos.es/wtuner/", routeValues: null, htmlAttributes: new { @class = "fa fa-play", style = "font-size:48px;color:rgb(169,169,169)" })
+        </div>
     </div>
-</div>
+</body2>
+
+<style>
+    body {
+        background-size: 100%;
+        background-image: url('../../Content/Image/abstractmusicnapa - Copy.jpg');
+        background-color: maroon;
+        background-repeat: no-repeat;
+    }
+
+    body {
+        padding-top: 75px;
+        padding-bottom: 0px;
+        padding-left: 50px;
+    }
+
+    .body2 {
+        padding-bottom: 300px;
+        padding-top: 70px;
+    }
+
+    .jumbotron {
+        background: rgba(0,0,0,0.0001);
+        padding-top: 20px;
+    }
+</style>

@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Musi_Tech_.Models.PlaylistListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #cccccc;
+            background-image: url('../../Content/Image/antiquepiano.jpg');
+            background-size: 150%;
+        }
+
+        body {
+            padding-top: 25px;
+            padding-bottom: 0px;
+            padding-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div> class="container">
+        <div class="outer">
+            <div class="details">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<h2>Playlist</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<style>
+    body {
+        background-image: url(../../Content/Image/whiteboard.jpg);
+        background-size: 150%;
+    }
+
+    .jumbotron {
+        background: rgba(0,0,0,0.0001);
+    }
+</style>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SongID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SongTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Artist)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SongID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SongTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Artist)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.SongID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.SongID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SongID })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Musi_Tech_.Models.LessonListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #cccccc;
+            background-image: url('../../Content/Image/marble2.jpg');
+            background-size: 100%;
+        }
+
+        body {
+            padding-top: 50px;
+            padding-bottom: 0px;
+            padding-left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="outer">
+            <div class="details">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<h2>Lesson Book</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LessonId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Instrument)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LessonId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Instrument)
+            </td>         
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.LessonId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.LessonId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.LessonId })
+            </td>
+        </tr>
+    }
+
+</table>

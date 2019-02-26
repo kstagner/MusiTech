@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - My MusiTech Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -17,11 +17,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("MusiTech", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Lessons", "Index", "Lesson")</li>
+                    }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Playlist", "Index", "Playlist")</li>
+                    }
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
@@ -33,9 +41,88 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - My MusiTech Application</p>
         </footer>
+        <div id="container">
+            <div id="main">
+
+            </div>
+        </div>
     </div>
+    <style>
+
+        body {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        body {
+            font-family: Arial;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: maroon;
+        }
+
+            .tab button {
+                background-color: inherit;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                transition: 0.3s;
+                font-size: 17px;
+            }
+
+                .tab button:hover {
+                    background-color: #ddd;
+                }
+
+                .tab button.active {
+                    background-color: #ccc;
+                }
+
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        #container {
+            min-height: 100%;
+        }
+
+        #main {
+            overflow: auto;
+            padding-bottom: 150px;
+        }
+
+        footer {
+            position: relative;
+            height: 100px;
+            margin-top: -100px;
+            clear: both;
+            padding-bottom: 10px;
+            padding-top: 115px;
+        }
+
+        header{
+            background-color: maroon;
+        }
+    </style>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

@@ -1,0 +1,50 @@
+﻿@model Musi_Tech_.Models.PlaylistDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PlaylistDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SongID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SongID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SongTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SongTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Artist)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Artist)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SongID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

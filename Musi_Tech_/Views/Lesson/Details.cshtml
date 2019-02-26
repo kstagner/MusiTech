@@ -1,0 +1,58 @@
+﻿@model Musi_Tech_.Models.LessonDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LessonDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LessonID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LessonID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Instrument)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Instrument)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.LessonID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

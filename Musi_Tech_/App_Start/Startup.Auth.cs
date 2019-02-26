@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using Musi_Tech_.Models;
+using Musi_Tech_.Data;
 
 namespace Musi_Tech_
 {
